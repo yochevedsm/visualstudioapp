@@ -10,6 +10,9 @@ namespace WebApplication26.Models
         public List<BlogPost> Blogs { get; set; }
     }
 
+
+
+
     public class SinglePostViewModel
     {
         public BlogPost Blogs { get; set; }

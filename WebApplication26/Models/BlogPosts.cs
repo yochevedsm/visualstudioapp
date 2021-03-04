@@ -14,6 +14,12 @@ namespace WebApplication26.Models
         public List<Comments> Comments { get; set; }
     }
 
+
+
+
+
+
+
     public class Comments
     {
         public int Id { get; set; }
