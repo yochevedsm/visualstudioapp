@@ -1,0 +1,46 @@
+﻿@model BlogPostViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 class="my-4">
+                           Blogs...
+                        </h1>
+                        @foreach (BlogPost blog in Model.Blogs)
+                        {
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h2 class="card-title">
+                                        <a href="/home/viewblog?id=@blog.Id">@blog.Title</a>
+                                    </h2>
+                                    <p class="card-text">
+                                        @(blog.Text.Length<200 ? blog.Text : $"{blog.Text.Substring(0, 200)}...")
+                                    </p>
+                                    <a href="/home/viewblog?id=@blog.Id" class="btn btn-primary">Read More &rarr;</a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    Posted on @blog.DateSubmitted.
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+
+
+</body>
+</html>

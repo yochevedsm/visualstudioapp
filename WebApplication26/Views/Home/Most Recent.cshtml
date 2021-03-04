@@ -1,0 +1,23 @@
+﻿@model SinglePostViewModel
+
+<h1 class="mt-4">@Model.Blogs.Title</h1>
+<hr>
+<p>Posted on @Model.Blogs.DateSubmitted</p>
+<hr>
+<p>@Model.Blogs.Text</p>
+<hr>
+<div class="card my-4">
+    <h5 class="card-header">Leave a Comment:</h5>
+    <div class="card-body">
+        <form method="post" action="/home/addcomment">
+            <input type="hidden" value="@Model.Blogs.Id" name="blogpostId" />
+            <div class="form-group">
+                <input id="commenterName" type="text" placeholder="Please enter your name" class="form-control" name="commenterName" value="@Model.Commenter" />
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Type your comment here but remember to be be nice..." id="text" name="text" class="form-control" rows="3"></textarea>
+            </div>
+            <button disabled name="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
